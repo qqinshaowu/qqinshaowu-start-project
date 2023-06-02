@@ -17,11 +17,64 @@
     <version>1.0-SNAPSHOT</version>
     <description>strat Project</description>
 
+    <dependencies>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+        <!--
+        依赖了依赖管理平台qqinshaowu-dependencies,版本号可以不写自动导入与之一样的版本
+        -->
+        <!-- 解释说明：
+        这是一个Maven依赖，它用于在Spring Boot应用程序中添加测试支持。具体来说，它添加了Spring Boot Test框架和JUnit测试框架的依赖。
+        <dependency>元素指定了依赖的坐标，包括groupId和artifactId。groupId指定了依赖的组织或公司名称，artifactId指定了依赖的名称。在这个例子中，
+        groupId是org.springframework.boot，artifactId是spring-boot-starter-test。 <scope>元素指定了依赖的作用域。在这个例子中，scope是test，
+        表示该依赖只在测试阶段使用，不会在运行时使用。通过添加这个依赖，您可以在Spring Boot应用程序中编写和运行单元测试和集成测试。例如，您可以使用@SpringBootTest
+        注解来编写一个集成测试，该注解会启动整个Spring应用程序上下文，并在测试期间运行它。您还可以使用@RunWith(SpringRunner.class)注解来指定使用Spring Test框架运行测试
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!--
+        解释说明：
+        这是一个Maven依赖，它用于在Spring Boot应用程序中添加核心依赖。具体来说，它添加了Spring Boot框架的依赖，包括Spring核心、Spring MVC、Spring Boot自动配置等。
+        通过添加这个依赖，您可以快速搭建一个基于Spring Boot的Web应用程序。它包含了Spring Boot框架的核心依赖，可以自动配置Spring应用程序上下文、Web应用程序、数据访问等功能。
+        您可以使用@SpringBootApplication注解来标识Spring Boot应用程序的入口点，并使用@RestController注解来标识一个RESTful API的控制器。
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--
+        解释说明：
+        这是一个Maven依赖项，它会将Spring Boot应用程序打包为可执行的WAR文件，并将Tomcat嵌入到WAR文件中，以便您可以将应用程序部署到独立的Tomcat服务器或其他支持Servlet容器的服务器上。
+具体来说，这个依赖项会自动配置Tomcat作为Spring Boot应用程序的嵌入式Web服务器，并将其打包到WAR文件中。这意味着您可以将WAR文件部署到任何支持Servlet容器的服务器上，而无需安装和配置独立的Tomcat服务器。
+需要注意的是，这个依赖项的作用域是compile，表示它在编译、测试和运行时都需要。如果您将应用程序部署到支持Servlet容器的服务器上，那么您需要将这个依赖项的作用域更改为provided，以避免将Tomcat打包到WAR文件中。
+        这里指定打包的时候不再需要tomcat相关的包
+         -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <!--<scope>provided</scope>-->
+        </dependency>
+
+        <!--springdoc的依赖-->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-common</artifactId>
+        </dependency>
+
+        <!--自己项目的引入,这样swagger才能看得见-->
+        <dependency>
+            <groupId>com.qqinshaowu</groupId>
+            <artifactId>qqinshaowu-basic-projec-iot-controller</artifactId>
+        </dependency>
+
+    </dependencies>
 
 </project>

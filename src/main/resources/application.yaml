@@ -1,0 +1,12 @@
+
+
+server:
+  port: 8080
+
+
+
+  
+springdoc:
+  swagger-ui:
+    path: /qqinshaowu-api-docs.html
+    persistAuthorization: true
