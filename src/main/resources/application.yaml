@@ -10,3 +10,10 @@ springdoc:
   swagger-ui:
     path: /qqinshaowu-api-docs.html
     persistAuthorization: true
+    # 设置API接口按照字母顺序排序
+    tags-sorter: alpha
+    # 设置HTTP方法按照字母顺序排序 method/alpha
+    operations-sorter: alpha
+
+
+
