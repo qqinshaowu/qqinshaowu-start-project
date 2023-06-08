@@ -1,14 +1,15 @@
-
-
+# 启动的tomcat端口号配置
 server:
   port: 8080
 
 
 
-  
+# swagger的文档配置
 springdoc:
   swagger-ui:
     path: /qqinshaowu-api-docs.html
+    #当 persistAuthorization 参数设置为 true 时，客户端会将授权信息保存在本地存储中，以便在下次访问时自动使用该授权信息。
+    #如果设置为 false，则客户端不会保存授权信息，需要在每次访问时重新进行授权。
     persistAuthorization: true
     # 设置API接口按照字母顺序排序
     tags-sorter: alpha
